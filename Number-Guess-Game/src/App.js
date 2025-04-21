@@ -30,7 +30,7 @@ const GuessNumberGame = () => {
   /*----------------------After the game is completed, all data is Automatically Empty -------------------- */
         const handleInputEmpty = ()=>{
           setUserInput('');
-          if (remainingChances == 0) {
+          if (remainingChances === 0) {
             setMessage(`Game over. The correct number was  ${random}.`);
             setChanceMessage('Try again🔁');
             setRemainingChances('');
@@ -58,12 +58,12 @@ const GuessNumberGame = () => {
 /*---------------------- Value guessing Function ------------------------ */
 
   const handleGuess = (value) => {
-    if(userInput==''){
+    if(userInput===''){
       setRemainingChances(remainingChances -1);
     }
 
       if(userInput){
-    if (value == random) {
+    if (value === random) {
       setChanceMessage("Congratulations😍");
       setRemainingChances('');
       setMessage(`You guessed the correct number.`);
