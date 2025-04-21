@@ -13,10 +13,7 @@ const GuessNumberGame = () => {
   const [message, setMessage] = useState('');
   const [chanceMessage, setChanceMessage]=useState('Remaining Chances:');
   const [timeoutId, setTimeoutId] = useState(null);
-  // const [minValue,setminValue] = useState(1);
-  // const [maxValue,setmaxValue] = useState(100);
-
-
+ 
   /*---------------------- Generate the Random Value --------------------- */
    function generateRandom(){
      let random = Math.floor(Math.random()*100)+1;
@@ -75,13 +72,11 @@ const GuessNumberGame = () => {
     } 
     else if(value > random) {
       setMessage('')
-      // setmaxValue(value);
       setMessage(`${value} is too High...`);
       setTimeout(handleInputEmpty,1000);
     }
     else if(value < random) {
       setMessage('')
-      // setminValue(value);
       setMessage(`${value} is too Low...`);
       setTimeout(handleInputEmpty,1000);
     }
