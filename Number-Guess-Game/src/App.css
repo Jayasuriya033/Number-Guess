@@ -75,7 +75,7 @@ input[type="number"]:hover {
 button {
   margin-top: 15px;
   padding: 10px 20px;
-  background-color: #00bcd4;
+  background-color: #0039d4;
   color: white;
   border: none;
   border-radius: 5px;
@@ -102,7 +102,7 @@ button:hover {
   }
 
   .topic {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   input[type="text"] {

@@ -13,6 +13,7 @@ const GuessNumberGame = () => {
   const [chanceMessage, setChanceMessage] = useState("Remaining Chances:");
   const [timeoutId, setTimeoutId] = useState(null);
   const [gameOver, setGameOver] = useState(false);
+  const [btnName, setBtnName] = useState("Refresh")
 
   /*---------------------- Generate the Random Value --------------------- */
   function generateRandom() {
@@ -33,10 +34,10 @@ const GuessNumberGame = () => {
     setUserInput("");
     if (remainingChances === 0) {
       setMessage(`Game over. The correct number was  ${random}.`);
-      setChanceMessage("Sorry, Try again🔁");
+      setChanceMessage("Sorry, Try again!");
+      setBtnName("Restart")
       setGameOver(true);
       setRemainingChances("");
-      setTimeout(handleRefresh, 3000);
     }
   };
   /*---------------------- Get a input Function and setting time ------------------------ */
@@ -67,10 +68,10 @@ const GuessNumberGame = () => {
     if (userInput) {
       if (value === random) {
         setChanceMessage("You won! 🎉");
+        setBtnName("Restart")
         setGameOver(true);
         setRemainingChances("");
         setMessage(`Congratulations! You guessed the number: ${random}`);
-        setTimeout(handleRefresh, 3000);
       } else if (value > random) {
         setMessage("");
         setMessage(`${value} is too High...`);
@@ -87,7 +88,7 @@ const GuessNumberGame = () => {
   return (
     <div className="container">
       <div className="container-box">
-        <h1 className="topic">Guess the number between 1 and 100</h1>
+        <h1 className="topic">Guess the Number: 1 to 100</h1>
         <p className="remaining">
           {chanceMessage} {remainingChances}
         </p>
@@ -100,7 +101,16 @@ const GuessNumberGame = () => {
         />
         <p className="result">{message}</p>
         <button className="btn btn-secondary" onClick={handleRefresh}>
-          <BsArrowRepeat /> Refresh
+          {gameOver ? (
+            <div>
+              <BsArrowRepeat /> &nbsp; {btnName}
+            </div>
+          ) : (
+            <div>
+            <BsArrowRepeat /> &nbsp; {btnName}
+              
+            </div>
+          )}
         </button>
       </div>
     </div>
