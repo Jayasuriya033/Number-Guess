@@ -1,57 +1,115 @@
- body{
+body {
   background-image: url('wooden-images.jpg');
- } 
-  .container{
+  background-size: cover;
+  background-position: center;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-} 
-.container-box{
-  width: 600px;
-  background-color: rgb(0, 0, 0, 0.3);
-  height: 250px;
-  border: 2px rgb(11, 18, 9);
-  border-radius: 10px;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.topic{
-  font-size: 20px;
-  font-family:'Courier New', Courier, monospace;
-  margin-bottom: 5px;
-  text-align: center;
-  color: white;
-}
-input:hover{
-    border: solid black;
-    background-color: rgb(96, 166, 145);
-}
-.remaining{
-  font-family: 'Courier New', Courier, monospace;
-  color: white;
-  font-size: 15px;
-}
-input[type="text"] {
-  width: 50%;
-  padding: 8px;
-  margin-top: 10px;
-  align-items: center;
-  color: rgb(0, 0, 0);
-  border-radius: 8px;
-  font-weight: bold;
-  
+  width: 100%;
+  min-height: 100vh;
 }
 
-.result{
-  color: aliceblue;
-  font-size: 20px;
-  text-align: left;
-  font-weight: bold;
-  font-family: 'Courier New', Courier, monospace;
+.container-box {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid #d4af37;
+  border-radius: 10px;
+  padding: 30px;
+  width: 80%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.refresh{
-  margin-bottom: 5px;
+
+.topic {
+  font-size: 24px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.remaining {
+  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  width: 50%;
+  padding: 10px;
+  margin-top: 10px;
+  text-align: center;
+  color: #333;
+  border-radius: 8px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  transition: border 0.3s ease;
+}
+
+input[type="number"]:hover {
+  border: 2px solid #00bcd4;
+}
+
+.result {
+  color: #ffeb3b;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:hover {
+  background-color: #0097a7;
+}
+
+@media (max-width: 600px) {
+  .container-box {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .topic {
+    font-size: 20px;
+  }
+
+  input[type="text"] {
+    width: 70%;
+  }
+
+  .remaining, .result {
+    font-size: 14px;
+  }
 }
