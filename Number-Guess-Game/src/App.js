@@ -33,7 +33,7 @@ const GuessNumberGame = () => {
   /*----------------------After the game is completed, all data is Automatically Empty -------------------- */
   const handleInputEmpty = () => {
     setUserInput("");
-    if (remainingChances === 0) {
+    if (remainingChances <= 0) {
       setMessage(`Game over. The correct number was  ${random}.`);
       setChanceMessage("Sorry, Try again!");
       setBtnName("Restart")
