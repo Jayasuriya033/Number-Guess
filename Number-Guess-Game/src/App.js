@@ -28,6 +28,7 @@ const GuessNumberGame = () => {
     setMessage("");
     setChanceMessage("Remaining Chances: ");
     setGameOver(false);
+    setBtnName("Refresh")
   };
   /*----------------------After the game is completed, all data is Automatically Empty -------------------- */
   const handleInputEmpty = () => {
