@@ -8,7 +8,7 @@ const GuessNumberGame = () => {
   const [random, setRandom] = useState(generateRandom());
   const [userInput, setUserInput] = useState("");
 
-  const [remainingChances, setRemainingChances] = useState(7);
+  const [remainingChances, setRemainingChances] = useState(6);
   const [message, setMessage] = useState("");
   const [chanceMessage, setChanceMessage] = useState("Remaining Chances:");
   const [timeoutId, setTimeoutId] = useState(null);
@@ -23,7 +23,7 @@ const GuessNumberGame = () => {
   /*---------------------- Refresh Button ------------------------ */
   const handleRefresh = () => {
     setUserInput("");
-    setRemainingChances(7);
+    setRemainingChances(6);
     setRandom(generateRandom());
     setMessage("");
     setChanceMessage("Remaining Chances: ");
